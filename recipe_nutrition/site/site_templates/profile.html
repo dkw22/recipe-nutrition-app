@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="height:400; width:'100%';">
+    <div class="container">
+      <div>
+        <h2 class="table-header">Your Recipes:</h2>
+        <button type="button" class="btn btn-primary modal-buttons" data-bs-toggle="modal" data-bs-target="#createModal">Create</button>   
+        <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create a Recipe!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name:</label>
+                  <input type="name" class="form-control" id="createname" placeholder="Chicken Noodle Soup">
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description:</label>
+                  <textarea class="form-control" id="createdescription" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="ingredients" class="form-label">Ingredients:</label>
+                  <textarea class="form-control" id="createingredients" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="instructions" class="form-label">Instructions:</label>
+                  <textarea class="form-control" id="createinstructions" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="createASelfRecipes()">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>     
+        <button type="button" class="btn btn-light modal-buttons" data-bs-toggle="modal" data-bs-target="#updateModal">Update</button>   
+        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update a Recipe!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name:</label>
+                  <input type="name" class="form-control" id="updatename" placeholder="Chicken Noodle Soup">
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description:</label>
+                  <textarea class="form-control" id="updatedescription" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="ingredients" class="form-label">Ingredients:</label>
+                  <textarea class="form-control" id="updateingredients" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="instructions" class="form-label">Instructions:</label>
+                  <textarea class="form-control" id="updateinstructions" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="updateASelfRecipe()">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>     
+        <button type="button" class="btn btn-danger modal-buttons" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>   
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure you wish to Delete this recipe?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="deleteASelfRecipe()">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>     
+
+      </div>
+      <table class="table table-bordered" >
+        <thead class="table-dark">
+          <tr>
+            <th class="table-col-headers" scope="col" style="font-weight: 900;"></th>
+            <th class="table-col-headers" scope="col" style="font-weight: 900;">Name:</th>
+            <th class="table-col-headers" scope="col" style="font-weight: 900;">Description:</th>
+            <th class="table-col-headers" scope="col" style="font-weight: 900;">Ingredients:</th>
+            <th class="table-col-headers" scope="col" style="font-weight: 900;">Instructions:</th>
+          </tr>
+        </thead>
+        <tbody id="booking-table">
+        </tbody>
+      </table>    
+    </div>
+</div>
+{% endblock content %}

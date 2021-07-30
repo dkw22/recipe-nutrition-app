@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Search for a recipe:</h2>
+            <p>Type in a keyword like 'chicken' to start exploring recipes!</p>
+            <div class="col-md-3 col-md-offset-3 d-flex flex-row">
+                <form class="form-inline d-flex align-items-center" name="getKeyword" id="getKeyword">
+                    <div class="form-group d-flex">
+                        <label for="keyword"></label>
+                        <input type="text" name="Keyword" class=" search_bar form-control d-flex align-items-center" placeholder="Enter a keyword" id="keyword">
+                    </div>
+                </form>
+                <button type="button" class="btn my_go_button" onclick="getRecipe()">Go</button>
+            </div>
+        </div>
+      </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 id="recipe-title"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" id="recipe-image">
+            
+        </div>
+        <div class="col">
+            <h1 id="recipe-servings"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Nutrition Information
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <section class="nutrition-label">
+                        <div class="nutrition-row border-b-md">
+                          <div class="nutrition-column text-bold">
+                            <div class="text-sm">Amount per serving</div>
+                            <div class="calories">Calories</div>
+                          </div>
+                          <div class="nutrition-column calories amount align-bottom text-right" id="calories">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column text-right text-bold text-sm">
+                            % Daily Value *
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column">
+                            <span class="text-bold">Total Fat</span> <span id="total-fat"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right" id="daily-fat">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column">
+                            <span class="text-indent">Saturated Fat</span> <span id="sat-fat"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right" id="daily-sat-fat">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column">
+                            <span class="text-indent">
+                                  <i>Trans</i> Fat</span> <span id="trans-fat"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right">
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column">
+                            <span class="text-bold">Cholesterol</span> <span id="chol"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right" id="daily-chol">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column">
+                            <span class="text-bold">Sodium</span> <span id="sodium"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right" id="daily-sodium">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column">
+                            <span class="text-bold">Total Carbohydrate</span> <span id="total-carbs"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right" id="total-daily-carbs">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column">
+                            <span class="text-indent">Dietary Fiber</span> <span id="fiber"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right" id="daily-fiber">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row">
+                          <div class="nutrition-column">
+                            <span class="text-indent">Total Sugars</span> <span id="total-sugar"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right">
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-t-sm border-b-lg">
+                          <div class="nutrition-column">
+                            <span class="text-bold">Protein</span> <span id="protein"></span>
+                          </div>
+                          <div class="nutrition-column text-bold text-right">
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column" id="vit-d">
+                            Vitamin D
+                          </div>
+                          <div class="nutrition-column text-right" id="daily-vit-d">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column" id="cal">
+                            Calcium
+                          </div>
+                          <div class="nutrition-column text-right" id="daily-cal">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b">
+                          <div class="nutrition-column" id="iron">
+                            Iron
+                          </div>
+                          <div class="nutrition-column text-right" id="daily-iron">
+                            
+                          </div>
+                        </div>
+                        <div class="nutrition-row border-b-md">
+                          <div class="nutrition-column" id="pot">
+                            Potassium
+                          </div>
+                          <div class="nutrition-column text-right" id="daily-pot">
+                            
+                          </div>
+                        </div>
+                        <footer class="nutrition-footer">
+                          <div class="asteric">*</div>
+                          <div class="footnote">
+                            The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
+                          </div>
+                        </footer>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Ingredients
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                      <div class="accordion-body" id="ingredients-lines">
+                        Ingredients
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

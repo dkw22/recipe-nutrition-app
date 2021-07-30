@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Website for Recipe Nutrition"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../static/css/main.css">
+<title>Recipe Nutrition</title>
+</head>
+<body class="root"  onload="getAllSelfRecipes()">
+    <nav class="my_navbar">
+        <div class="navbar_container">
+            <div class="left_navbar">
+                <h1 class="logo">
+                    <a href="{{ url_for('site.home') }}" class="logo_a logo_navigation">Nutrional Count</a>
+                </h1>
+                <ul class="navigation logo_navigation">
+                    <li>
+                        <a class="nav_a" href="{{ url_for('site.home') }}">
+                            <li>Home</li>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav_a" href="{{ url_for('site.recipes') }}">
+                            <li>Recipes</li>
+                        </a>    
+                    </li>
+                </ul>
+            </div>
+            <ul class="navigation2 logo_navigation">
+                {% if current_user.is_authenticated %}
+                <a class="nav_a" href="{{ url_for('site.profile') }}">
+                    <li>Profile</li>
+                </a>
+                <!--User Auth Check for SignIn/SignUp Nav Buttons-->
+                <a class="nav_a" href="{{ url_for('auth.logout') }}">
+                    <li>Log Out</li>
+                </a>
+                {% else %}
+                <a class="nav_a" href="{{ url_for('auth.signin') }}">
+                    <li>Sign In</li>
+                </a>
+                <a class="nav_a" href="{{ url_for('auth.signup') }}">
+                    <li>Sign Up</li>
+                </a>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+<script src="../static/js/main.js" defer></script>
+</body>
+</html>

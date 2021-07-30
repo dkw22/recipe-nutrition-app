@@ -1,0 +1,223 @@
+/* Navbar */
+.root {
+  padding: 0;
+  margin: 0;
+}
+
+.my_navbar {
+  position: sticky;
+  top: 0;
+}
+
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dcf393;
+}
+
+.logo {
+  margin: 0 0 0 0.45em;
+}
+
+.logo_a {
+  color: rgb(28, 24, 22);
+}
+.logo_navigation {
+  list-style: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.left_navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navigation2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.nav_a {
+  display: block;
+  padding: 0;
+  color: black;
+  padding: 5px;
+}
+
+/* Main index.html */
+main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/heart_food.png");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+}
+
+.main_text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.signin_text {
+  text-align: center;
+  color: white;
+}
+
+.signin_field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signin_area {
+  margin-top: 200px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my_button {
+  background-color: #dcf393;
+  text-decoration: none;
+  appearance: button;
+  color: initial;
+  padding: 10px;
+  border-radius: 100px;
+}
+
+/* Main Recipe.html */
+.my_go_button {
+  background-color: #dcf393;
+  border-radius: 100px;
+}
+
+.search_bar {
+  margin-right: 10px;
+}
+
+.nutrition-label {
+  font-size: 12px;
+  border: 2px solid #000000;
+  padding: 5px;
+  line-height: 1.2;
+  width: 260px;
+}
+
+.nutrition-facts {
+  margin: 0 0 2px 0;
+  padding-bottom: 2px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.nutrition-header {
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+
+.nutrition-footer {
+  display: flex;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.asteric {
+  width: 13px;
+}
+
+.nutrition-row {
+  display: flex;
+  padding: 2px 0;
+}
+
+.nutrition-column {
+  flex-grow: 1;
+}
+
+.align-bottom {
+  align-self: flex-end;
+}
+
+.border-b-none {
+  border-bottom: 0;
+}
+
+.border-b {
+  border-bottom: 1px solid #000000;
+}
+
+.border-b-md {
+  border-bottom: 6px solid #000000;
+}
+
+.border-b-lg {
+  border-bottom: 10px solid #000000;
+}
+
+.border-t-sm {
+  border-top: 1px solid #000000;
+}
+
+.text-sm {
+  font-size: 10px;
+}
+
+.text-md {
+  font-size: 16px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-indent {
+  margin-left: 15px;
+}
+
+.text-indent-md {
+  margin-left: 30px;
+}
+
+.calories {
+  font-size: 25px;
+  line-height: 1;
+}
+
+.amount {
+  font-size: 32px;
+}
+
+.modal-buttons {
+  margin-top: 25px;
+  margin-right: 5px;
+  margin-bottom: 50px;
+  margin-left: 5px;
+}
+
+.table-header {
+  margin-top: 40px;
+  color: #000000;
+}
