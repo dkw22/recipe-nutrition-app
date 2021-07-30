@@ -5,7 +5,7 @@ function createASelfRecipes(){
     let recipedescription = document.querySelector("#createdescription").value
     let recipeingredients = document.querySelector("#createingredients").value
     let recipeinstructions = document.querySelector("#createinstructions").value
-    fetch('http://127.0.0.1:5000/api/create-recipe', {
+    fetch('https://recipe-nutrition.herokuapp.com/api/create-recipe', {
         method: "POST",
         body: JSON.stringify({
             name: `${recipename}`,
@@ -29,7 +29,7 @@ function createASelfRecipes(){
 
 function getAllSelfRecipes(){
     let user_token = "899933714de5fc99d06bd278e65bddbef57ea4d88458db24"
-    fetch('http://127.0.0.1:5000/api/recipes', {
+    fetch('https://recipe-nutrition.herokuapp.com/api/recipes', {
         headers: {
             "Content-Type": "application/json",
             "x-access-token": `Bearer ${user_token}`
@@ -72,7 +72,7 @@ function updateASelfRecipe(){
             recipeinstructions = document.querySelector("#updateinstructions").value
         }
     })
-    fetch(`http://127.0.0.1:5000/api/recipes/update/${id}`, {
+    fetch(`https://recipe-nutrition.herokuapp.com/api/recipes/update/${id}`, {
         method: "PUT",
         body: JSON.stringify({
             name: `${recipename}`,
@@ -100,7 +100,7 @@ function deleteASelfRecipe(){
             id = element.value
         }
     })
-    fetch(`http://127.0.0.1:5000/api/recipes/bye/${id}`, {
+    fetch(`https://recipe-nutrition.herokuapp.com/api/recipes/bye/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
